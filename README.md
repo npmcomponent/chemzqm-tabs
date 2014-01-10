@@ -1,8 +1,10 @@
 # tabs
 
 [demo](http://chemzqm.github.io/tabs/test/)
+
 Dynamic tabs component with add, remove and order support.
-If you just just want to convert tabs from static html, consider use [stagas/tabify](https://github.com/stagas/tabify).
+
+If you just want to convert tabs from static html, consider use [stagas/tabify](https://github.com/stagas/tabify).
 
 ## Install
 
