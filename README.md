@@ -49,7 +49,7 @@ Make the tab navs sortable
 
 Add a tab with title string and associate dom node.
 
-### .active(el|query)
+### .active(el | selector)
 
 Active the tab by css query(querySelector inside) or tab element.
 
