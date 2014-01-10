@@ -5,7 +5,7 @@ If you just just want to convert tabs from static html, consider use [stagas/tab
 
 ## Install
 
-`component-install chemzqm/tabs`
+    component-install chemzqm/tabs
 
 ## Usage
 
