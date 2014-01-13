@@ -1,6 +1,6 @@
 # tabs
 
-[demo](http://chemzqm.github.io/tabs/test/)
+[demo](http://chemzqm.github.io/tabs/)
 
 Dynamic tabs component with add, remove and order support.
 
