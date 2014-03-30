@@ -1,0 +1,28 @@
+{
+  "name": "tabs",
+  "version": "0.0.0",
+  "description": "tabs component",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chemzqm/tabs.git"
+  },
+  "keywords": [
+    "tabs"
+  ],
+  "author": "chemzqm@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chemzqm/tabs/issues"
+  },
+  "homepage": "https://github.com/chemzqm/tabs",
+  "devDependencies": {
+    "mocha": "^1.18.2"
+  }
+}
