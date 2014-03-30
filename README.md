@@ -47,9 +47,9 @@ Add close icon to the tab navs to make the tabs closable.
 
 Make the tab navs sortable
 
-### .add(title, node)
+### .add(title, node | string)
 
-Add a tab with title string and associate dom node.
+Add a tab with title string and associate dom node or template string.
 
 ### .active(el | selector)
 
