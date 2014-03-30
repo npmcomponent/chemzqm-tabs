@@ -9,7 +9,7 @@
 var Emitter = require('emitter')
 var Sortable = require('sortable');
 var domify = require('domify');
-var events = require ('event');
+var events = require ('events');
 var classes = require ('classes');
 var slice = Array.prototype.slice;
 
@@ -31,8 +31,9 @@ function Tabs (parent) {
   var body = this.body = domify('<div class="tabs-body"></div>');
   parent.appendChild(header);
   parent.appendChild(body);
-  this._onclick = this.onclick.bind(this);
-  events.bind(this.header, 'click', this._onclick);
+  this.events = events(header, this);
+  this.events.bind('click .close', '_close');
+  this.events.bind('click li', '_click');
 }
 
 Emitter(Tabs.prototype);
@@ -42,7 +43,7 @@ Emitter(Tabs.prototype);
  * @api public
  */
 Tabs.prototype.remove = function() {
-  events.unbind(this.header, 'click', this._onclick);
+  this.events.unbind();
   this.body.parentNode.removeChild(this.body);
   this.header.parentNode.removeChild(this.header);
 }
@@ -92,6 +93,9 @@ Tabs.prototype.add = function(title, node) {
   return this;
 }
 
+Tabs.prototype._active = function (e) {
+  console.log(e);
+}
 /**
  * Active a tab by selector or tab element
  * @param {String|Element} el
@@ -124,20 +128,31 @@ Tabs.prototype.active = function(el) {
 Tabs.prototype.onclick = function(e) {
   var el = e.target;
   e.preventDefault();
-  e.stopPropagation();
   if (classes(el).has('close')) {
-    var li = el.parentNode;
-    var prev = li.previousSibling;
-    var next = li.nextSibling;
-    var target = li.__target;
-    target.parentNode.removeChild(target);
-    li.parentNode.removeChild(li);
-    if (this.body.childNodes.length === 0) return this.emit('empty');
-    if (this._active !== li) return;
-    if (prev) return this.active(prev);
-    if (next) return this.active(next);
   }
   else if (el.parentNode === this.header) {
-    this.active(el);
   }
+}
+
+Tabs.prototype._click = function (e) {
+  var el = e.target;
+  if (classes(el).has('close')) return;
+  e.stopPropagation();
+  this.active(el);
+}
+
+Tabs.prototype._close = function (e) {
+  var el = e.target;
+  e.preventDefault();
+  e.stopPropagation();
+  var li = el.parentNode;
+  var prev = li.previousElementSibling;
+  var next = li.nextElementSibling;
+  var target = li.__target;
+  target.parentNode.removeChild(target);
+  li.parentNode.removeChild(li);
+  if (this.body.childNodes.length === 0) return this.emit('empty');
+  if (this._active !== li) return;
+  if (prev) return this.active(prev);
+  if (next) return this.active(next);
 }
