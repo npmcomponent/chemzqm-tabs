@@ -93,9 +93,6 @@ Tabs.prototype.add = function(title, node) {
   return this;
 }
 
-Tabs.prototype._active = function (e) {
-  console.log(e);
-}
 /**
  * Active a tab by selector or tab element
  * @param {String|Element} el
@@ -118,20 +115,6 @@ Tabs.prototype.active = function(el) {
   classes(el.__target).remove('hide');
   this._active = el;
   this.emit('active', el);
-}
-
-/**
- * 
- * @param {Event} e
- * @api private
- */
-Tabs.prototype.onclick = function(e) {
-  var el = e.target;
-  e.preventDefault();
-  if (classes(el).has('close')) {
-  }
-  else if (el.parentNode === this.header) {
-  }
 }
 
 Tabs.prototype._click = function (e) {

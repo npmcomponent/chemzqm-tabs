@@ -1,6 +1,6 @@
 {
   "name": "tabs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "dynamic tabs component with add, remove and order support",
   "keywords": [
     "tabs"

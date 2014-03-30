@@ -1,10 +1,18 @@
 /*global describe,it*/
 
 var Tabs = require('tabs');
-var parentNode = document.createElement('div');
+var parentNode;
 var assert = require('assert');
 var domify = require('domify');
-var create = require('create-event');
+
+beforeEach(function() {
+  parentNode = document.createElement('div');
+  document.body.appendChild(parentNode);
+})
+
+afterEach(function() {
+  document.body.removeChild(parentNode);
+})
 
 describe('Tabs', function() {
   describe('Tabs()', function() {
@@ -69,12 +77,9 @@ describe('Tabs', function() {
       tabs.on('empty', function() {
         called = true;
       })
-      var e = create('click');
       var a = tabs.header.querySelector('.close');
-      Object.defineProperty(e, 'target', {
-        get: function () { return a; }
-      });
-      tabs.onclick(e);
+      window.a = a;
+      a.click();
       assert(called === true);
       assert(tabs.header.childNodes.length === 0);
       assert(tabs.body.childNodes.length === 0);
