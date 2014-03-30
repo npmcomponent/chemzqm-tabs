@@ -1,5 +1,7 @@
 # tabs
 
+[![Build Status](https://secure.travis-ci.org/chemzqm/tabs.png)](http://travis-ci.org/chemzqm/tabs)
+
 [demo](http://chemzqm.github.io/tabs/)
 
 Dynamic tabs component with add, remove and order support.
