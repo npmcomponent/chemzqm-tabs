@@ -18,7 +18,9 @@
     "chemzqm/sortable": "*"
   },
   "development": {
-    "component/assert": "*"
+    "dependencies": {
+      "component/assert": "*"
+    }
   },
   "scripts": [
     "index.js"
