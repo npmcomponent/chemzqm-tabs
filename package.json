@@ -1,28 +1,20 @@
 {
-  "name": "tabs",
-  "version": "0.0.0",
-  "description": "tabs component",
-  "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
-  "scripts": {
-    "test": "make test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/chemzqm/tabs.git"
-  },
+  "name": "chemzqm-tabs",
+  "description": "dynamic tabs component with add, remove and order support",
+  "version": "0.0.2",
   "keywords": [
     "tabs"
   ],
-  "author": "chemzqm@gmail.com",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/chemzqm/tabs/issues"
+  "styles": [
+    "tabs.css"
+  ],
+  "dependencies": {
+    "component-emitter": "git://github.com/npmcomponent/component-emitter.git",
+    "component-domify": "git://github.com/npmcomponent/component-domify.git",
+    "component-classes": "git://github.com/npmcomponent/component-classes.git",
+    "component-events": "git://github.com/npmcomponent/component-events.git",
+    "ianstormtaylor-create-event": "git://github.com/npmcomponent/ianstormtaylor-create-event.git",
+    "chemzqm-sortable": "git://github.com/npmcomponent/chemzqm-sortable.git"
   },
-  "homepage": "https://github.com/chemzqm/tabs",
-  "devDependencies": {
-    "mocha": "^1.18.2"
-  }
+  "license": "MIT"
 }

@@ -6,11 +6,11 @@
  *
  */
 
-var Emitter = require('emitter')
-var Sortable = require('sortable');
-var domify = require('domify');
-var events = require ('events');
-var classes = require ('classes');
+var Emitter = require('component-emitter')
+var Sortable = require('chemzqm-sortable');
+var domify = require('component-domify');
+var events = require ('component-events');
+var classes = require ('component-classes');
 var slice = Array.prototype.slice;
 
 /**
